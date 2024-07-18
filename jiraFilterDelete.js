@@ -11,6 +11,8 @@ describe("add toDo test", function(){
             await driver.findElement(By.xpath("//*[@id='find_link']")).click();
             await driver.wait(until.elementLocated(By.id('issues_manage_filters_link_lnk')), 5000);
             await driver.findElement(By.id('issues_manage_filters_link_lnk')).click();
+            await sleep(3000);
+            await driver.findElement(By.id('my-filters-tab')).click();
             let noFavoriteFilters = await driver.findElements(By.className('fav-link aui-icon aui-icon-small disabled aui-iconfont-unstar'));
             for (let i = 0; i < noFavoriteFilters.length; i++) {
                 await sleep(5000);
